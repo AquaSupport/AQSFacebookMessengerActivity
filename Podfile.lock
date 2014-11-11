@@ -1,0 +1,16 @@
+PODS:
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.20.0):
+    - Bolts (~> 1.0)
+  - OCMock (3.1.1)
+
+DEPENDENCIES:
+  - Facebook-iOS-SDK
+  - OCMock
+
+SPEC CHECKSUMS:
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
+  OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
+
+COCOAPODS: 0.34.4

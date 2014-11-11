@@ -42,6 +42,8 @@ Setup
 3. In your `.plist`, set `FacebookDisplayName` as you FB App's Display Name.
 4. Setup URL Scheme like `fb42` where `42` is your FB App ID (For FB App ID:`7828392093`, the URL Scheme is `fb7828392093`)
 
+![](https://raw.githubusercontent.com/AquaSupport/AQSFacebookMessengerActivity/master/Assets/ss_plist.png)
+
 Installation
 ---
 

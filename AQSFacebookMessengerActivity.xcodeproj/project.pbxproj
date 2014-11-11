@@ -16,6 +16,8 @@
 		D45E8FA81A11CF92009EA945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45E8FA71A11CF92009EA945 /* Images.xcassets */; };
 		D45E8FAB1A11CF92009EA945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45E8FA91A11CF92009EA945 /* LaunchScreen.xib */; };
 		D45E8FB71A11CF92009EA945 /* AQSFacebookMessengerActivityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E8FB61A11CF92009EA945 /* AQSFacebookMessengerActivityTests.m */; };
+		D45E8FC31A11D10F009EA945 /* AQSFacebookMessengerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D45E8FC21A11D10F009EA945 /* AQSFacebookMessengerActivity.m */; };
+		D45E8FC51A11D118009EA945 /* AQSFacebookMessengerActivity.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45E8FC41A11D118009EA945 /* AQSFacebookMessengerActivity.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		D45E8FB01A11CF92009EA945 /* AQSFacebookMessengerActivityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AQSFacebookMessengerActivityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45E8FB51A11CF92009EA945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D45E8FB61A11CF92009EA945 /* AQSFacebookMessengerActivityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AQSFacebookMessengerActivityTests.m; sourceTree = "<group>"; };
+		D45E8FC11A11D10F009EA945 /* AQSFacebookMessengerActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQSFacebookMessengerActivity.h; sourceTree = "<group>"; };
+		D45E8FC21A11D10F009EA945 /* AQSFacebookMessengerActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQSFacebookMessengerActivity.m; sourceTree = "<group>"; };
+		D45E8FC41A11D118009EA945 /* AQSFacebookMessengerActivity.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AQSFacebookMessengerActivity.xcassets; sourceTree = "<group>"; };
 		DCAA85F76BB3AAF91CD4CBA5 /* Pods-AQSFacebookMessengerActivityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSFacebookMessengerActivityTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSFacebookMessengerActivityTests/Pods-AQSFacebookMessengerActivityTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F50B226C839362467C2448EE /* libPods-AQSFacebookMessengerActivityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AQSFacebookMessengerActivityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75AE22CCF1F79EB7E3E61AD /* Pods-AQSFacebookMessengerActivity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQSFacebookMessengerActivity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AQSFacebookMessengerActivity/Pods-AQSFacebookMessengerActivity.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 		D45E8F991A11CF92009EA945 /* AQSFacebookMessengerActivity */ = {
 			isa = PBXGroup;
 			children = (
+				D45E8FC01A11D105009EA945 /* Classes */,
 				D45E8F9E1A11CF92009EA945 /* AppDelegate.h */,
 				D45E8F9F1A11CF92009EA945 /* AppDelegate.m */,
 				D45E8FA11A11CF92009EA945 /* ViewController.h */,
@@ -138,6 +144,16 @@
 				D45E8FB51A11CF92009EA945 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D45E8FC01A11D105009EA945 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D45E8FC11A11D10F009EA945 /* AQSFacebookMessengerActivity.h */,
+				D45E8FC21A11D10F009EA945 /* AQSFacebookMessengerActivity.m */,
+				D45E8FC41A11D118009EA945 /* AQSFacebookMessengerActivity.xcassets */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F144313B7CC9D8FB521409F9 /* Pods */ = {
@@ -237,6 +253,7 @@
 			files = (
 				D45E8FA61A11CF92009EA945 /* Main.storyboard in Resources */,
 				D45E8FAB1A11CF92009EA945 /* LaunchScreen.xib in Resources */,
+				D45E8FC51A11D118009EA945 /* AQSFacebookMessengerActivity.xcassets in Resources */,
 				D45E8FA81A11CF92009EA945 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +337,7 @@
 			files = (
 				D45E8FA31A11CF92009EA945 /* ViewController.m in Sources */,
 				D45E8FA01A11CF92009EA945 /* AppDelegate.m in Sources */,
+				D45E8FC31A11D10F009EA945 /* AQSFacebookMessengerActivity.m in Sources */,
 				D45E8F9D1A11CF92009EA945 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AQSFacebookMessengerActivity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -455,6 +474,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AQSFacebookMessengerActivity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

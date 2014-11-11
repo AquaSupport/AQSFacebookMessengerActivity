@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <OCMock.h>
+
+#import "AQSFacebookMessengerActivity.h"
+#import <FacebookSDK.h>
+
+@interface AQSFacebookMessengerActivity (Test)
+
+- (BOOL)isFacebookMessengerDialogAvailable;
+- (BOOL)isFacebookMessengerDialogAvailableWithPhoto;
+
+@end
 
 @interface AQSFacebookMessengerActivityTests : XCTestCase
+
+@property AQSFacebookMessengerActivity *activity;
 
 @end
 
@@ -17,7 +30,8 @@
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    _activity = [[AQSFacebookMessengerActivity alloc] init];
 }
 
 - (void)tearDown {
@@ -25,16 +39,58 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testItsActivityCategoryIsShare {
+    XCTAssertTrue(AQSFacebookMessengerActivity.activityCategory == UIActivityCategoryShare);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testItReturnsItsImage {
+    XCTAssertNotNil(_activity.activityImage);
 }
+
+- (void)testItReturnsItsType {
+    XCTAssertTrue([_activity.activityType isEqualToString:@"org.openaquamarine.facebookmessenger"]);
+}
+
+- (void)testItReturnsItsTitle {
+    XCTAssertTrue([_activity.activityTitle isEqualToString:@"Facebook Messenger"]);
+}
+
+- (void)testItCanPerformActivityWithURLWhenMessengerIsAvailable {
+    id activity = [OCMockObject partialMockForObject:_activity];
+    OCMStub([activity isFacebookMessengerDialogAvailable]).andReturn(YES);
+    OCMStub([activity isFacebookMessengerDialogAvailableWithPhoto]).andReturn(YES);
+    
+    NSArray *activityItems = @[[NSURL URLWithString:@"http://google.com/"]];
+    XCTAssertTrue([activity canPerformWithActivityItems:activityItems]);
+}
+
+- (void)testItCanPerformActivityWithLinkShareParamsWhenMessengerIsAvailable {
+    id activity = [OCMockObject partialMockForObject:_activity];
+    OCMStub([activity isFacebookMessengerDialogAvailable]).andReturn(YES);
+    OCMStub([activity isFacebookMessengerDialogAvailableWithPhoto]).andReturn(YES);
+    
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
+    
+    NSArray *activityItems = @[params, [NSURL URLWithString:@"http://google.com/"]];
+    XCTAssertTrue([activity canPerformWithActivityItems:activityItems]);
+}
+
+
+- (void)testItCannotPerformActivityWithURLWhenMessengerIsNotAvailable {
+    id activity = [OCMockObject partialMockForObject:_activity];
+    OCMStub([activity isFacebookMessengerDialogAvailable]).andReturn(NO);
+    
+    NSArray *activityItems = @[@"hoge", [NSURL URLWithString:@"http://google.com/"]];
+    XCTAssertFalse([activity canPerformWithActivityItems:activityItems]);
+}
+
+- (void)testItCannotPerformActivityWithoutURLOrImageWhenMessengerIsAvailable {
+    id activity = [OCMockObject partialMockForObject:_activity];
+    OCMStub([activity isFacebookMessengerDialogAvailable]).andReturn(YES);
+    
+    NSArray *activityItems = @[@"hoge"];
+    XCTAssertFalse([activity canPerformWithActivityItems:activityItems]);
+}
+
 
 @end

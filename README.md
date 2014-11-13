@@ -1,9 +1,9 @@
 AQSFacebookMessengerActivity
 ============================
 
-
 ![](http://img.shields.io/cocoapods/v/AQSFacebookMessengerActivity.svg?style=flat) [![Build Status](https://travis-ci.org/AquaSupport/AQSFacebookMessengerActivity.svg?branch=master)](https://travis-ci.org/AquaSupport/AQSFacebookMessengerActivity)
 
+![](https://raw.githubusercontent.com/AquaSupport/AQSFacebookMessengerActivity/master/Screencast.gif)
 
 [iOS] UIActivity class for sharing with Facebook Messenger for iOS
 

@@ -26,11 +26,10 @@
     
     UIActivity *activity = [[AQSFacebookMessengerActivity alloc] init];
     NSArray *items = @[
-                       [UIImage imageNamed:@"AQSFacebookMessengerActivity"]
+                       [NSURL URLWithString:@"http://google.com/"]
                        ];
-    UIActivityViewController *viewController = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:@[activity]];
-    
-    [self presentViewController:viewController animated:YES completion:NULL];
+    UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:@[activity]];
+    [self presentViewController:controller animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -45,6 +45,8 @@
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
+    return YES;
+    
     if ([self isFacebookMessengerDialogAvailable] == NO) {
         return NO;
     }

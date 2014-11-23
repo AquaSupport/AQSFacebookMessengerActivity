@@ -45,17 +45,16 @@
 }
 
 - (BOOL)canPerformWithActivityItems:(NSArray *)activityItems {
-    return YES;
-    
     if ([self isFacebookMessengerDialogAvailable] == NO) {
         return NO;
     }
-    UIImage *image = [self nilOrFirstImageFromArray:_activityItems];
-    NSURL *URL = [self nilOrFirstURLFromArray:_activityItems];
-    FBPhotoParams *photoParams = [self nilOrFirstPhotoParamsFromArray:_activityItems];
-    FBLinkShareParams *linkParams = [self nilOrFirstLinkShareParamsFromArray:_activityItems];
     
-    if (linkParams) {
+    UIImage *image = [self nilOrFirstImageFromArray:activityItems];
+    NSURL *URL = [self nilOrFirstURLFromArray:activityItems];
+    FBPhotoParams *photoParams = [self nilOrFirstPhotoParamsFromArray:activityItems];
+    FBLinkShareParams *linkParams = [self nilOrFirstLinkShareParamsFromArray:activityItems];
+    
+    if (linkParams && [self isFacebookMessengerDialogAvailableWithLinkShareParams:linkParams]) {
         return YES;
     } else if (photoParams && [self isFacebookMessengerDialogAvailableWithPhoto]) {
         return YES;

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 appledoc --prefix-merged-sections \
+ --template ~/RubymineProjects/SwiftyDoc\
  --ignore ".m"\
  --ignore "Pods"\
  --keep-undocumented-objects\
